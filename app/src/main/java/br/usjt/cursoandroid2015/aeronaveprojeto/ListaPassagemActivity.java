@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
-import java.util.TreeSet;
+import java.util.ArrayList;
 
 
 /**
@@ -22,7 +22,7 @@ public class ListaPassagemActivity extends ActionBarActivity {
         String origem = intent.getStringExtra(MainActivity.ORIGEM);
         String destino = intent.getStringExtra(MainActivity.DESTINO);
 
-        TreeSet<Passagem> lista = selecao.listarTodasPassagens(origem, destino);
+        ArrayList<Passagem> lista = selecao.listarTodasPassagens(origem, destino);
 
         //cria o texto da view
         TextView textView = (TextView) findViewById(R.id.txt_lista_passagem);

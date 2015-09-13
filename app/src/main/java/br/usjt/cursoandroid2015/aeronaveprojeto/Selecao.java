@@ -21,8 +21,8 @@ public class Selecao {
             }
             return null;
         }
-        public TreeSet<Passagem> listarTodasPassagens(String origem, String destino) {
-            TreeSet<Passagem> listas = new TreeSet<Passagem>();
+        public ArrayList<Passagem> listarTodasPassagens(String origem, String destino) {
+            ArrayList<Passagem> listas = new ArrayList<Passagem>();
 
             if (origem.length() > 0 && destino.length() > 0) {
                 listas = buscarOrigemDestino(origem, destino);
@@ -37,8 +37,8 @@ public class Selecao {
             return listas;
         }
 
-        private TreeSet<Passagem> buscarOrigem(String origem) {
-            TreeSet<Passagem> lista = new TreeSet<Passagem>();
+        private ArrayList<Passagem> buscarOrigem(String origem) {
+            ArrayList<Passagem> lista = new ArrayList<Passagem>();
             for (Passagem passagem : passagens) {
                 if (origem.equals(passagem.getOrigem())) {
                     lista.add(passagem);
@@ -47,8 +47,8 @@ public class Selecao {
             return lista;
         }
 
-        private TreeSet<Passagem> buscarDestino(String destino) {
-            TreeSet<Passagem> lista = new TreeSet<Passagem>();
+        private ArrayList<Passagem> buscarDestino(String destino) {
+            ArrayList<Passagem> lista = new ArrayList<Passagem>();
             for (Passagem passagem : passagens) {
                 if (destino.equals(passagem.getDestino())) {
                     lista.add(passagem);
@@ -57,8 +57,8 @@ public class Selecao {
             return lista;
         }
 
-        private TreeSet<Passagem> buscarOrigemDestino(String origem, String destino) {
-            TreeSet<Passagem> lista = new TreeSet<Passagem>();
+        private ArrayList<Passagem> buscarOrigemDestino(String origem, String destino) {
+            ArrayList<Passagem> lista = new ArrayList<Passagem>();
             for (Passagem passagem : passagens) {
                 if (destino.equals(passagem.getDestino()) && origem.equals(passagem.getOrigem())){
                     lista.add(passagem);
@@ -67,8 +67,8 @@ public class Selecao {
             return lista;
         }
 
-        private TreeSet<Passagem> todas() {
-            TreeSet<Passagem> lista = new TreeSet<Passagem>();
+        private ArrayList<Passagem> todas() {
+            ArrayList<Passagem> lista = new ArrayList<Passagem>();
             for (Passagem passagem : passagens) {
                 lista.add(passagem);
             }
